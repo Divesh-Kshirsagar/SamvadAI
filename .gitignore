@@ -6,6 +6,7 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+db.*
 
 # --- React / Next.js (apps/web) ---
 node_modules/
@@ -84,3 +85,4 @@ __v0_jsx-dev-runtime.ts
 .v0-trash/
 .vercel/
 next.user-config.*
+apps/api/db.sqlite3
