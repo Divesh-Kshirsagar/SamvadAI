@@ -1,0 +1,182 @@
+[
+    {
+        "id": "c1a9f7d2-6c4b-4a8b-9d6e-1f2b7c9a1011",
+        "customer_name": "Rahul Mehta",
+        "timestamp": "2026-03-22T09:14:22Z",
+        "channel": "Mobile App",
+        "account_type": "Savings",
+        "raw_text": "Tried doing IMPS of 4.5L twice, app froze n now amt debited but not credited!! this is urgent pls check server glitch?? ref id showing failed but money gone??",
+        "actual_priority": "Urgent"
+    },
+    {
+        "id": "b3e82c19-0f9a-4c6d-9a73-2b9f4c1a2022",
+        "customer_name": "Ananya Sharma",
+        "timestamp": "2026-03-22T07:52:10Z",
+        "channel": "Email",
+        "account_type": "Wealth Management",
+        "raw_text": "Why am I being asked AGAIN for KYC docs?? Already submitted PAN + Aadhaar last week. This is 3rd email, very frustrating.",
+        "actual_priority": "High"
+    },
+    {
+        "id": "9a1c6b88-7d5e-4b0e-8a9c-3c5f2a7d3033",
+        "customer_name": "Kunal Verma",
+        "timestamp": "2026-03-22T05:33:48Z",
+        "channel": "WhatsApp",
+        "account_type": "Credit Card",
+        "raw_text": "Hi team, just wanted to check how reward points are calculated on intl txns? also when do they reflect? thanks",
+        "actual_priority": "Low"
+    },
+    {
+        "id": "d4f7a2b1-3c6e-4d91-9aef-4d6b8c2e4044",
+        "customer_name": "Priya Nair",
+        "timestamp": "2026-03-21T22:11:03Z",
+        "channel": "IVR",
+        "account_type": "Credit Card",
+        "raw_text": "WHAT IS THIS SUBSCRIPTION CHARGE?? I never authorized this!! 999 rs debited from my card ending 4432. I want immediate reversal or I escalate FRAUD complaint!",
+        "actual_priority": "Urgent"
+    },
+    {
+        "id": "e5b8c7d9-2f1a-4e63-8b2d-5a7f9c5e5055",
+        "customer_name": "Siddharth Jain",
+        "timestamp": "2026-03-22T03:44:19Z",
+        "channel": "Mobile App",
+        "account_type": "Savings",
+        "raw_text": "New app UI is super confusing... where is beneficiary list?? earlier it was simple now everything hidden under menus.",
+        "actual_priority": "Medium"
+    },
+    {
+        "id": "f6c9d8a1-8b2e-4a4b-9d1e-6b8c7f6a6066",
+        "customer_name": "Neha Kapoor",
+        "timestamp": "2026-03-21T18:29:55Z",
+        "channel": "WhatsApp",
+        "account_type": "Savings",
+        "raw_text": "Same issue as others?? IMPS not working since morning in Mumbai region, txn stuck n showing processing. pls resolve ASAP",
+        "actual_priority": "Urgent"
+    },
+    {
+        "id": "a7d1e2f3-9c4b-4e6a-8f3b-7c1d2e7f7077",
+        "customer_name": "Arjun Reddy",
+        "timestamp": "2026-03-21T20:02:31Z",
+        "channel": "Email",
+        "account_type": "Home Loan",
+        "raw_text": "Uploaded KYC docs multiple times but still getting rejection mail saying 'unclear image'. This is delaying my loan processing.",
+        "actual_priority": "High"
+    },
+    {
+        "id": "b8e2f3a4-1d5c-4b7f-9a4d-8d2e3f8a8088",
+        "customer_name": "Meera Iyer",
+        "timestamp": "2026-03-22T10:01:05Z",
+        "channel": "Mobile App",
+        "account_type": "Credit Card",
+        "raw_text": "Hi, could you confirm if reward pts expire after 1 yr? cant find proper info in app.",
+        "actual_priority": "Low"
+    },
+    {
+        "id": "c9f3a4b5-2e6d-4c8a-9b5e-9e3f4a9b9099",
+        "customer_name": "Vikram Singh",
+        "timestamp": "2026-03-21T16:45:22Z",
+        "channel": "IVR",
+        "account_type": "Credit Card",
+        "raw_text": "Unauthorized Netflix or some subscription charged twice!! I never shared CVV with anyone. Block my card NOW!!",
+        "actual_priority": "Urgent"
+    },
+    {
+        "id": "da04b5c6-3f7e-4d9b-8c6f-0f4a5b0c1010",
+        "customer_name": "Pooja Desai",
+        "timestamp": "2026-03-22T11:12:44Z",
+        "channel": "In-Branch",
+        "account_type": "Savings",
+        "raw_text": "Staff also couldn't explain new app layout properly... balance view and statements all mixed up, not user friendly.",
+        "actual_priority": "Medium"
+    },
+    {
+        "id": "eb15c6d7-4a8f-4e0c-9d7a-1a5b6c1d1111",
+        "customer_name": "Rohit Gupta",
+        "timestamp": "2026-03-21T21:55:33Z",
+        "channel": "Mobile App",
+        "account_type": "Savings",
+        "raw_text": "Again same IMPS failure!!! 2 lakh stuck, says server timeout Mumbai cluster?? why happening repeatedly today??",
+        "actual_priority": "Urgent"
+    },
+    {
+        "id": "fc26d7e8-5b9a-4f1d-8e8b-2b6c7d2e1212",
+        "customer_name": "Sneha Patil",
+        "timestamp": "2026-03-21T14:23:18Z",
+        "channel": "Email",
+        "account_type": "Wealth Management",
+        "raw_text": "KYC rejected again for signature mismatch?? Already verified in branch last month. Please stop asking repeatedly.",
+        "actual_priority": "High"
+    },
+    {
+        "id": "0d37e8f9-6c0b-4a2e-9f9c-3c7d8e3f1313",
+        "customer_name": "Amit Kulkarni",
+        "timestamp": "2026-03-22T08:05:59Z",
+        "channel": "WhatsApp",
+        "account_type": "Credit Card",
+        "raw_text": "Can u tell how many reward points I have currently? app showing diff numbers sometimes.",
+        "actual_priority": "Low"
+    },
+    {
+        "id": "1e48f901-7d1c-4b3f-8a0d-4d8e9f4a1414",
+        "customer_name": "Nikita Shah",
+        "timestamp": "2026-03-21T19:40:11Z",
+        "channel": "IVR",
+        "account_type": "Credit Card",
+        "raw_text": "Random subscription charge from 'AppStore intl'?? I didnt authorize anything. refund this immediately!!",
+        "actual_priority": "Urgent"
+    },
+    {
+        "id": "2f590a12-8e2d-4c40-9b1e-5e9f0a5b1515",
+        "customer_name": "Deepak Yadav",
+        "timestamp": "2026-03-22T06:27:36Z",
+        "channel": "Mobile App",
+        "account_type": "Savings",
+        "raw_text": "UI after update is cluttered... cant find IMPS option easily, earlier it was 1 click now too many steps.",
+        "actual_priority": "Medium"
+    },
+    {
+        "id": "3g6a1b23-9f3e-4d51-8c2f-6f0a1b6c1616",
+        "customer_name": "Farah Khan",
+        "timestamp": "2026-03-21T23:59:59Z",
+        "channel": "Email",
+        "account_type": "Savings",
+        "raw_text": "IMPS of 3L failed but amount debited. pls reverse urgently. This seems like a major outage issue today.",
+        "actual_priority": "Urgent"
+    },
+    {
+        "id": "4h7b2c34-0a4f-4e62-9d3a-7a1b2c7d1717",
+        "customer_name": "Manish Agarwal",
+        "timestamp": "2026-03-21T17:12:08Z",
+        "channel": "In-Branch",
+        "account_type": "Home Loan",
+        "raw_text": "Branch asked me again for KYC doc even after digital submission. very inefficient process.",
+        "actual_priority": "High"
+    },
+    {
+        "id": "5i8c3d45-1b5a-4f73-8e4b-8b2c3d8e1818",
+        "customer_name": "Riya Sen",
+        "timestamp": "2026-03-22T04:18:27Z",
+        "channel": "WhatsApp",
+        "account_type": "Credit Card",
+        "raw_text": "Hi just checking if reward points applicable on fuel spends? thanks!",
+        "actual_priority": "Low"
+    },
+    {
+        "id": "6j9d4e56-2c6b-4a84-9f5c-9c3d4e9f1919",
+        "customer_name": "Harsh Vardhan",
+        "timestamp": "2026-03-21T15:05:44Z",
+        "channel": "IVR",
+        "account_type": "Savings",
+        "raw_text": "App update is confusing n slow also. takes too long to load dashboard.",
+        "actual_priority": "Medium"
+    },
+    {
+        "id": "7k0e5f67-3d7c-4b95-8a6d-0d4e5f0a2020",
+        "customer_name": "Alok Tiwari",
+        "timestamp": "2026-03-22T12:22:11Z",
+        "channel": "Email",
+        "account_type": "Savings",
+        "raw_text": "High value transfer via IMPS failed, amount debited not credited. This is unacceptable, need immediate resolution.",
+        "actual_priority": "Urgent"
+    }
+]

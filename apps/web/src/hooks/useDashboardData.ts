@@ -18,6 +18,6 @@ export interface SummaryData {
 export function useDashboardSummary() {
   return useQuery({
     queryKey: ["analytics", "summary"],
-    queryFn: () => fetcher<SummaryData>("/analytics/summary/"),
+    queryFn: () => fetcher<SummaryData>("/complaints/analytics/summary/"),
   });
 }

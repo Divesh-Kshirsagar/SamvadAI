@@ -15,13 +15,13 @@ export interface Cluster {
 export function useTrends() {
   return useQuery({
     queryKey: ["analytics", "trends"],
-    queryFn: () => fetcher<TrendPoint[]>("/analytics/trends/"),
+    queryFn: () => fetcher<TrendPoint[]>("/complaints/analytics/trends/"),
   });
 }
 
 export function useClusters() {
   return useQuery({
     queryKey: ["analytics", "clusters"],
-    queryFn: () => fetcher<Cluster[]>("/analytics/clusters/"),
+    queryFn: () => fetcher<Cluster[]>("/complaints/analytics/clusters/"),
   });
 }

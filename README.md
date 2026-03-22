@@ -31,8 +31,8 @@ Consolidates grievances from all touchpoints into one source of truth:
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: [React](https://reactjs.org/) / [Next.js](https://nextjs.org/)
-- **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python)
+- **Frontend**: [React](https://reactjs.org/)
+- **Backend**: [django-ninja](https://django-ninja.tiangolo.com/) (Python)
 - **AI Engine**: [Claude LLM API](https://www.anthropic.com/claude)
 - **Documentation**: [MkDocs](https://www.mkdocs.org/)
 - **Package Management**: `npm` (Frontend), `uv` (Backend)
@@ -45,7 +45,7 @@ Consolidates grievances from all touchpoints into one source of truth:
 .
 ├── apps/
 │   ├── web/          # Next.js React Frontend
-│   └── api/          # FastAPI Python Backend
+│   └── api/          # django-ninja Python Backend
 ├── docs/             # MkDocs Documentation
 └── README.md         # Project Overview
 ```
@@ -61,7 +61,7 @@ Consolidates grievances from all touchpoints into one source of truth:
 
 ### Installation
 
-1. **Backend (FastAPI)**:
+1. **Backend (django-ninja)**:
    ```bash
    cd apps/api
    uv sync
