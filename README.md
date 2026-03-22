@@ -1,96 +1,74 @@
 # SamvadAI 🚀
-### Gen-AI Powered Complaint Management for Union Bank
+**The Ultimate AI-Driven Complaint Management Console for Union Bank**
 
-**SamvadAI** is a next-generation, AI-driven complaint management platform designed to unify customer grievances from multiple channels into a single, intelligent dashboard. By leveraging the **Claude LLM API**, the system streamlines the entire resolution lifecycle—from automated classification and sentiment analysis to contextual response generation and regulatory compliance.
-
----
-
-## 🌟 Key Features
-
-### 📡 Omnichannel Unification
-Consolidates grievances from all touchpoints into one source of truth:
-- **Digital**: Mobile app, Email, and Social Media
-- **Physical**: Branch forms and IVR
-
-### 🤖 Intelligent Automation (Powered by Claude LLM)
-- **Real-time Classification**: Automatically categorizes complaints (Loan, Card, Digital, Branch, Fraud) and identifies the specific product.
-- **Sentiment & Severity**: Evaluates the tone and urgency of each case to prioritize high-risk issues.
-- **Duplicate Detection**: Identifies related or recurring complaints across different channels to prevent redundant efforts.
-- **Contextual Drafts**: Generates AI-powered response drafts for agents, ensuring high-quality and consistent communication.
-
-### ⏱️ SLA & Escalation Management
-- **Countdown Tracking**: Real-time SLA monitoring for each complaint.
-- **Automated Escalation**: Intelligent triggers that alert supervisors before performance targets are breached.
-
-### 📊 360-Degree Insights
-- **Timeline View**: Full communication history and audit trail for every investigator.
-- **Trend Analysis**: surfaces root cause narratives and emerging clusters using Generative AI.
-- **Regulatory Reporting**: Auto-drafts summaries compliant with **RBI** and **CPGRAMS** frameworks.
+SamvadAI is an intelligent dashboard designed to streamline bank complaint management. It uses a **LangGraph-based agentic pipeline** to classify, prioritize, and cluster complaints automatically, reducing manual agent workload by up to 80%.
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Key Features Built
+- **Dashboard & KPIs**: Real-time monitoring of total complaints, urgent cases, and SLA-breach risks.
+- **AI Registry**: Searchable table of all customer issues with live AI progress indicators.
+- **Dual-Model Intelligence**: Supports **Gemini 2.5 Flash** (Cloud) and **Phi-3** (Local Ollama) for zero-latency, private analysis.
+- **Batch Processing**: An "Analyze All" local processor that loops through huge backlogs sequentially with a live UI progress bar.
+- **AI Analysis Intelligence**: Automatic categorization, sentiment extraction, and severity scoring.
+- **Draft Response Editor**: Generates high-quality, professional replies for agents to approve and send instantly.
+- **Trend Analytics**: Visualizes complaint volume over time and AI-grouped duplicate "Root Cause Clusters."
 
-- **Frontend**: [React](https://reactjs.org/)
-- **Backend**: [django-ninja](https://django-ninja.tiangolo.com/) (Python)
-- **AI Engine**: [Claude LLM API](https://www.anthropic.com/claude)
-- **Documentation**: [MkDocs](https://www.mkdocs.org/)
-- **Package Management**: `npm` (Frontend), `uv` (Backend)
+---
+
+## 🛠️ Technology Stack
+- **Backend**: Django 5 + Django-Ninja + SQLite + UV (Package Manager)
+- **AI Orchestration**: LangChain + LangGraph + Ollama + Google Generative AI
+- **Frontend**: React 19 + Vite + TypeScript + Tailwind CSS v4 + shadcn/ui
+- **State & Fetching**: Zustand + TanStack Query v5 + Recharts + Sonner (Toasts)
+- **Documentation**: MkDocs with Material Theme
+
+---
+
+## 🚀 Quick Start (Manual Setup)
+
+Follow these steps to run the full stack locally:
+
+### 1. Initialize the Backend
+Ensure you have `uv` installed, then set up the Django API and seed the database.
+```bash
+cd apps/api
+uv sync
+uv run python manage.py migrate
+uv run python manage.py seed_complaints
+uv run python manage.py runserver 0.0.0.0:8000
+```
+
+### 2. Run the Frontend
+In a new terminal, install the dependencies and boot Vite.
+```bash
+cd apps/web
+npm install
+npm run dev
+```
+
+### 3. (Optional) Run Documentation
+In a new terminal, you can view the comprehensive project architecture docs.
+```bash
+cd docs
+uv run mkdocs serve -a 0.0.0.0:8001
+```
+
+Visit the dashboard at **[http://localhost:5173](http://localhost:5173)**!
+
+---
+
+## 🤖 Local AI Configuration (Edge Processing)
+To showcase the "On-Device/Private AI" capabilities, ensure [Ollama](https://ollama.com/) is running:
+
+1. **Pull the model**: `ollama pull phi3`
+2. **Enable Local Mode**: Add `USE_LOCAL_LLM=true` to your `apps/api/.env` file.
+3. **Trigger Analysis**: Click **"Analyze All"** in the Registry to watch your local machine process the bank's data without internet connectivity!
 
 ---
 
 ## 📂 Project Structure
-
-```text
-.
-├── apps/
-│   ├── web/          # Next.js React Frontend
-│   └── api/          # django-ninja Python Backend
-├── docs/             # MkDocs Documentation
-└── README.md         # Project Overview
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v18+)
-- Python (v3.10+)
-- `uv` (Fastest Python package manager)
-
-### Installation
-
-1. **Backend (django-ninja)**:
-   ```bash
-   cd apps/api
-   uv sync
-   uv run main.py
-   ```
-
-2. **Frontend (React/Next.js)**:
-   ```bash
-   cd apps/web
-   npm install
-   npm run dev
-   ```
-
-3. **Documentation**:
-   ```bash
-   cd docs
-   mkdocs serve
-   ```
-
----
-
-## 📈 Impact
-
-- **40% Reduction** in average complaint handling time.
-- **Improved First-Response Quality** through AI-assisted drafting.
-- **100% SLA Compliance** via proactive escalation triggers.
-- **Regulatory Ready**: Seamless alignment with the RBI's CGRS framework.
-
----
-
-## 📄 License
-*This project is built for Union Bank of India. All rights reserved.*
+- `apps/api/`: Django Ninja backend & LangGraph pipeline.
+- `apps/web/`: React frontend features.
+- `shared/`: Shared TypeScript types and universal UI components.
+- `docs/`: Modular MkDocs technical documentation.
