@@ -3,10 +3,9 @@ from datetime import datetime, timezone
 from typing import List, Optional
 from uuid import UUID
 
-from django.db.models import Count
+from django.db.models import Count, Exists, OuterRef
 from django.shortcuts import get_object_or_404
 from ninja import Router
-from ninja.pagination import paginate
 
 from .models import Complaint, AnalysisResult, DuplicateGroup
 from .schemas import (
@@ -27,7 +26,10 @@ def list_complaints(
     status: Optional[str] = None,
     channel: Optional[str] = None,
 ):
-    qs = Complaint.objects.all()
+    qs = Complaint.objects.annotate(
+        has_analysis=Exists(AnalysisResult.objects.filter(complaint=OuterRef('pk')))
+    ).order_by('-timestamp')
+    
     if priority:
         qs = qs.filter(actual_priority=priority)
     if status:

@@ -14,6 +14,7 @@ class ComplaintOut(Schema):
     raw_text: str
     actual_priority: str
     status: str
+    has_analysis: bool = False
 
 
 class AnalysisOut(Schema):

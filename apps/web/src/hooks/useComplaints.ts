@@ -9,6 +9,7 @@ export interface Complaint {
   account_type: string;
   actual_priority: string;
   status: string;
+  has_analysis: boolean;
 }
 
 export function useComplaints(filters: { priority?: string; status?: string; channel?: string }) {
