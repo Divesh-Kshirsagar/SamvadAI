@@ -72,3 +72,13 @@ To showcase the "On-Device/Private AI" capabilities, ensure [Ollama](https://oll
 - `apps/web/`: React frontend features.
 - `shared/`: Shared TypeScript types and universal UI components.
 - `docs/`: Modular MkDocs technical documentation.
+
+---
+
+## 🔮 Future Roadmap
+
+While the hackathon demo is complete, the architecture is designed to scale with these future additions:
+1. **React Native Mobile App**: Using the `shared/` package, agents and branch managers can have a native mobile experience to approve complaint drafts on the go.
+2. **WebSocket Live Analysis**: Connecting Django Channels to the React dashboard to stream AI analysis progress token-by-token directly into the UI.
+3. **Advanced RAG integration**: Currently, drafts are based on general tone. We plan to insert a vector database (like Qdrant or ChromaDB) loaded with Union Bank's exact policy PDFs, ensuring the AI cites actual bank clauses when drafting refunds.
+4. **Automated Sending**: Connecting the "Approve & Send" button directly to the bank's SMTP server / WhatsApp Business API to execute the resolution immediately.
