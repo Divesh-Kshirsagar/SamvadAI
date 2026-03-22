@@ -42,11 +42,11 @@ export function AIAnalysisPanel({ analysis }: { analysis: AnalysisResult }) {
           </div>
           <div className="space-y-1">
             <p className="text-sm font-medium text-muted-foreground">Sentiment</p>
-            <Badge variant={getSentimentColor(analysis.sentiment) as any}>{analysis.sentiment}</Badge>
+            <Badge variant={getSentimentColor(analysis.sentiment) as "default" | "secondary" | "destructive" | "outline"}>{analysis.sentiment}</Badge>
           </div>
           <div className="space-y-1">
             <p className="text-sm font-medium text-muted-foreground">Severity</p>
-            <Badge variant={getPriorityColor(analysis.ai_priority) as any}>{analysis.ai_priority}</Badge>
+            <Badge variant={getPriorityColor(analysis.ai_priority) as "default" | "secondary" | "destructive" | "outline"}>{analysis.ai_priority}</Badge>
           </div>
         </div>
 

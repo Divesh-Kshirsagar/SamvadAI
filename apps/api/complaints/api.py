@@ -1,5 +1,4 @@
 """Django-Ninja API router for complaints."""
-from datetime import datetime, timezone
 from typing import List, Optional
 from uuid import UUID
 
@@ -122,7 +121,7 @@ def analyze_all(request):
                 },
             )
             count += 1
-        except Exception as e:
+        except Exception:
             pass  # Continue with remaining complaints
     return {"analyzed": count, "total": complaints.count()}
 

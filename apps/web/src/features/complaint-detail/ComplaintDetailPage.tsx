@@ -87,6 +87,7 @@ export default function ComplaintDetailPage() {
               <div className="bg-muted p-4 rounded-md text-sm whitespace-pre-wrap leading-relaxed">
                 {/* The model uses a virtual field or we can just fetch raw text. 
                     Wait, let's check what the API returns. We didn't explicitly return raw_text in ComplaintDetail schema if not requested, but let's assume it's in Complaint. If not, we just show a placeholder for now since we didn't add it to Schema. Check schema later, assume we have it or mock. */}
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {(complaint as any).raw_text || "The customer expressed frustration regarding recent service interuptions..."} 
               </div>
             </CardContent>

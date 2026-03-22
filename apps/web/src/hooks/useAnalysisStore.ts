@@ -7,7 +7,7 @@ interface AnalysisState {
   isAnalyzing: boolean;
   progress: number;
   total: number;
-  analyzeAll: (data: Complaint[], queryClient: any) => Promise<void>;
+  analyzeAll: (data: Complaint[], queryClient: import('@tanstack/react-query').QueryClient) => Promise<void>;
 }
 
 export const useAnalysisStore = create<AnalysisState>((set, get) => ({

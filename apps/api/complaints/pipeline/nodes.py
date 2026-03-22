@@ -2,7 +2,6 @@
 import json
 import re
 from datetime import datetime, timedelta, timezone
-from typing import Any
 
 from django.conf import settings
 import os

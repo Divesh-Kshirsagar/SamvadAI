@@ -58,7 +58,7 @@ export function RecentComplaintsTable() {
                   <TableCell>{complaint.channel}</TableCell>
                   <TableCell>{complaint.account_type}</TableCell>
                   <TableCell>
-                    <Badge variant={getPriorityColor(complaint.actual_priority) as any}>
+                    <Badge variant={getPriorityColor(complaint.actual_priority) as "default" | "secondary" | "destructive" | "outline"}>
                       {complaint.actual_priority}
                     </Badge>
                   </TableCell>
