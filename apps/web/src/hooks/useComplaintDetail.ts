@@ -6,7 +6,7 @@ export interface AnalysisResult {
   category: string;
   product: string;
   sentiment: string;
-  priority: string;
+  ai_priority: string;
   sla_hours: number;
   ai_draft: string;
   cluster_tag: string | null;
