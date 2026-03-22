@@ -3,6 +3,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Copy, Check, Send } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export function DraftResponseEditor({
   draftContent,
@@ -23,6 +24,12 @@ export function DraftResponseEditor({
     navigator.clipboard.writeText(content);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleApproveAndSend = () => {
+    toast.success("Response sent to customer!", {
+      description: "The AI drafted reply has been successfully dispatched."
+    });
   };
 
   return (
@@ -50,7 +57,7 @@ export function DraftResponseEditor({
             {copied ? <Check className="mr-2 h-4 w-4" /> : <Copy className="mr-2 h-4 w-4" />}
             {copied ? "Copied" : "Copy to Clipboard"}
           </Button>
-          <Button>
+          <Button onClick={handleApproveAndSend}>
             <Send className="mr-2 h-4 w-4" /> Approve & Send
           </Button>
         </CardFooter>

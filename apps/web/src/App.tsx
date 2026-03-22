@@ -4,10 +4,12 @@ import DashboardPage from "./features/dashboard/DashboardPage";
 import ComplaintsPage from "./features/complaints/ComplaintsPage";
 import ComplaintDetailPage from "./features/complaint-detail/ComplaintDetailPage";
 import AnalyticsPage from "./features/analytics/AnalyticsPage";
+import { Toaster } from "sonner";
 
 function App() {
   return (
     <BrowserRouter>
+      <Toaster position="top-center" richColors />
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<DashboardPage />} />
