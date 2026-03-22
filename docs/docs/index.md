@@ -1,17 +1,31 @@
-# Welcome to MkDocs
+# SamvadAI Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Welcome to the internal documentation for SamvadAI, the advanced Gen-AI powered complaint resolution and analytics platform for Union Bank.
 
-## Commands
+## Project Overview
+This repository contains the complete source code for:
+- **`apps/api`**: Django + Ninja + LangGraph API backend.
+- **`apps/web`**: Vite + React + shadcn/ui frontend dashboard.
+- **`shared`**: Cross-platform UI primitives and utilities.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Getting Started
 
-## Project layout
+To run the application locally, you will need `uv` and `npm`.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+### 1. Backend Setup
+```bash
+cd apps/api
+uv sync
+uv run python manage.py migrate
+uv run python manage.py seed_complaints
+uv run python manage.py runserver
+```
+
+### 2. Frontend Setup
+```bash
+cd apps/web
+npm install
+npm run dev
+```
+
+Visit [http://localhost:5173](http://localhost:5173) to view the dashboard!

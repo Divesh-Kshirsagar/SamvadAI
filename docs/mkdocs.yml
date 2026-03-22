@@ -1,1 +1,19 @@
-site_name: My Docs
+site_name: SamvadAI
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Architecture:
+    - Backend API: backend.md
+    - Frontend Web: frontend.md
+  - AI Pipeline: ai-pipeline.md
