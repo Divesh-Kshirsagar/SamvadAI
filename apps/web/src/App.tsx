@@ -3,6 +3,7 @@ import AppLayout from "./layouts/AppLayout";
 import DashboardPage from "./features/dashboard/DashboardPage";
 import ComplaintsPage from "./features/complaints/ComplaintsPage";
 import ComplaintDetailPage from "./features/complaint-detail/ComplaintDetailPage";
+import AnalyticsPage from "./features/analytics/AnalyticsPage";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           <Route index element={<DashboardPage />} />
           <Route path="complaints" element={<ComplaintsPage />} />
           <Route path="complaints/:id" element={<ComplaintDetailPage />} />
-          <Route path="analytics" element={<div className="p-6">Analytics coming soon</div>} />
+          <Route path="analytics" element={<AnalyticsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
