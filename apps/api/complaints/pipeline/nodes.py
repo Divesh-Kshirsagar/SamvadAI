@@ -5,7 +5,9 @@ from datetime import datetime, timedelta, timezone
 from typing import Any
 
 from django.conf import settings
+import os
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_ollama import ChatOllama
 
 from .prompts import (
     CLASSIFY_PROMPT, SENTIMENT_PROMPT, SEVERITY_PROMPT,
@@ -13,9 +15,20 @@ from .prompts import (
 )
 
 
-def get_llm() -> ChatGoogleGenerativeAI:
+def get_llm():
+    """Returns either Gemini or local Ollama depending on configuration."""
+    use_local = os.getenv("USE_LOCAL_LLM", "false").lower() == "true"
+    
+    # If explicitly set to local OR if Google key is missing, fallback to Ollama
+    if use_local or not getattr(settings, "GOOGLE_API_KEY", None):
+        return ChatOllama(
+            model="phi3",
+            temperature=0.1,
+            format="json", # Phi3 is excellent at JSON with this parameter
+        )
+        
     return ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash",
+        model="gemini-2.5-flash", 
         google_api_key=settings.GOOGLE_API_KEY,
         temperature=0.1,
     )
