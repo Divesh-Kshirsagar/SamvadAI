@@ -12,6 +12,8 @@ from .schemas import (
     SummaryOut, TrendPoint, ClusterOut, StatusUpdateIn
 )
 from .pipeline.graph import run_pipeline
+from .tasks import process_single_complaint
+import django_rq
 
 router = Router()
 
@@ -102,28 +104,21 @@ def analyze_complaint(request, complaint_id: UUID):
 
 @router.post("/analyze-all/", tags=["complaints"])
 def analyze_all(request):
-    complaints = Complaint.objects.all()
-    count = 0
-    for complaint in complaints:
-        try:
-            output = run_pipeline(complaint)
-            AnalysisResult.objects.update_or_create(
-                complaint=complaint,
-                defaults={
-                    "category": output.get("category", ""),
-                    "product": output.get("product", ""),
-                    "sentiment": output.get("sentiment", ""),
-                    "ai_priority": output.get("ai_priority", ""),
-                    "sla_hours": output.get("sla_hours", 24),
-                    "sla_deadline": output.get("sla_deadline"),
-                    "cluster_tag": output.get("cluster_tag", ""),
-                    "ai_draft": output.get("ai_draft", ""),
-                },
-            )
-            count += 1
-        except Exception:
-            pass  # Continue with remaining complaints
-    return {"analyzed": count, "total": complaints.count()}
+    complaint_ids = list(Complaint.objects.values_list('id', flat=True))
+    for cid in complaint_ids:
+        process_single_complaint.delay(cid)
+    return 202, {"message": "Accepted", "enqueued": len(complaint_ids)}
+
+
+@router.get("/analyze-all/status/", tags=["complaints"])
+def analyze_all_status(request):
+    queue = django_rq.get_queue('default')
+    return {
+        "queued": queue.count,
+        "started": len(queue.started_job_registry) if hasattr(queue.started_job_registry, '__len__') else queue.started_job_registry.count,
+        "finished": len(queue.finished_job_registry) if hasattr(queue.finished_job_registry, '__len__') else queue.finished_job_registry.count,
+        "failed": len(queue.failed_job_registry) if hasattr(queue.failed_job_registry, '__len__') else queue.failed_job_registry.count,
+    }
 
 
 @router.patch("/{complaint_id}/status/", tags=["complaints"])

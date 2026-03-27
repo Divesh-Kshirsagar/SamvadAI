@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 
 
@@ -22,7 +23,7 @@ class Complaint(models.Model):
         ('Low', 'Low'),
     ]
 
-    id = models.UUIDField(primary_key=True, editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     customer_name = models.CharField(max_length=255)
     timestamp = models.DateTimeField()
     channel = models.CharField(max_length=50, choices=CHANNEL_CHOICES)
