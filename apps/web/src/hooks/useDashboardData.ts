@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetcher } from "@/lib/api";
+import { useEffect } from "react";
+import { toast } from "sonner";
 
 export interface SummaryData {
   total: number;
@@ -16,8 +18,16 @@ export interface SummaryData {
 }
 
 export function useDashboardSummary() {
-  return useQuery({
+  const query = useQuery({
     queryKey: ["analytics", "summary"],
     queryFn: () => fetcher<SummaryData>("/complaints/analytics/summary/"),
   });
+
+  useEffect(() => {
+    if (query.isError && query.error) {
+      toast.error("Failed to load dashboard stats", { description: query.error.message, duration: 5000 });
+    }
+  }, [query.isError, query.error]);
+
+  return query;
 }

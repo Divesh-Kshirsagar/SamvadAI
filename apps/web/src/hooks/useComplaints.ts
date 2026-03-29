@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetcher } from "@/lib/api";
+import { useEffect } from "react";
+import { toast } from "sonner";
 
 export interface Complaint {
   id: string;
@@ -13,7 +15,7 @@ export interface Complaint {
 }
 
 export function useComplaints(filters: { priority?: string; status?: string; channel?: string }) {
-  return useQuery({
+  const query = useQuery({
     queryKey: ["complaints", "list", filters],
     queryFn: () => {
       const params = new URLSearchParams();
@@ -25,4 +27,12 @@ export function useComplaints(filters: { priority?: string; status?: string; cha
       return fetcher<Complaint[]>(`/complaints/${qs ? `?${qs}` : ""}`);
     },
   });
+
+  useEffect(() => {
+    if (query.isError && query.error) {
+      toast.error("Failed to load complaints", { description: query.error.message, duration: 5000 });
+    }
+  }, [query.isError, query.error]);
+
+  return query;
 }

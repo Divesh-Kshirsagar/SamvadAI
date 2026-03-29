@@ -1,53 +1,44 @@
-# Gen-AI Pipeline
+[Back to README](../../README.md)
 
-SamvadAI uses a complex `LangGraph` state machine to guarantee deterministic and highly accurate data processing.
+# AI Pipeline
+**This doc explains each step in the LangGraph pipeline from complaint text to drafted response.**
 
-The graph executes sequentially for every incoming complaint.
-
-## LangGraph Logic
-The SamvadAI pipeline is a deterministic state machine orchestrated by `LangGraph`. This ensures that even for complex, non-linear reasoning, the processing flow is structured and testable.
+## Pipeline graph
 
 ```mermaid
-graph LR
-    Start([Input: Raw Text]) --> Classify[Classifier]
-    Classify --> Sentiment[Sentiment Analysis]
-    Sentiment --> Severity[Severity & SLA]
-    Severity --> Duplicate[Duplicate Detection]
-    Duplicate --> Draft[Response Draft]
-    Draft --> End([Output: AnalysisResult])
+flowchart LR
+    A[Raw complaint] --> B[Classify]
+    B --> C[Sentiment]
+    C --> D[Priority + SLA]
+    D --> E[Duplicate cluster]
+    E --> F[Draft response]
 ```
 
-## Node Algorithms
+## Step-by-step behavior
 
-### 1. Classifier Node
-**Algorithm**: Zero-shot Classification + Pydantic Parsing.
-- Takes `raw_text`.
-- Predicts `category` (Loan/Card/Digital/Branch/Fraud) and `product` (e.g. IMPS, KYC, ATM).
-- Returns structured JSON to the graph state.
+### 1) Classify
+The model predicts complaint category and product area.
 
-### 2. Sentiment Node
-**Algorithm**: Emotional Tone Mapping.
-- Extracts `tone` (Positive/Neutral/Negative/Hostile).
-- Hostile sentiment triggers an automatic escalation flag for management.
+### 2) Sentiment
+The model labels complaint tone (for example: neutral, negative, hostile).
 
-### 3. Severity & SLA Node
-**Algorithm**: Priority Scoring Matrix.
-- Inputs `category` and `sentiment`.
-- Urgent category + Negative sentiment = **Urgent** priority.
-- Generates a **deadline timestamp** based on `sla_hours` (e.g., 4h for Urgent, 24h for Low).
+### 3) Priority + SLA
+The model estimates urgency and suggested SLA window.
 
-### 4. Duplicate Detection Node
-**Algorithm**: Vector-like semantic clustering (via few-shot LLM matching).
-- Compares new complaint against `existing_clusters` fetched from SQLite.
-- If a match is found, it labels the `cluster_tag` to group systemic bank outages (e.g., "ATM_DOWN_INDORE").
+### 4) Duplicate/cluster detection
+The pipeline checks if this complaint resembles existing issue clusters.
 
-### 5. Draft Response Node
-**Algorithm**: Contextual Templating.
-- Combines the complaint text and AI insights to draft a professional, helpful support reply in the bank's brand voice.
+### 5) Draft response
+The model drafts a response text for human review.
 
-## LLM Providers
-SamvadAI is built with a dual-model fallback architecture:
-1. **Cloud (Default)**: Uses Google Gemini 2.5 Flash via `langchain-google-genai`. This is the primary stable model for the cloud-connected dashboard.
-2. **Local (Edge)**: Uses Microsoft Phi-3 via `Ollama`. This allows the bank's sensitive customer data to be processed entirely offline on internal infrastructure.
+## Model providers
+You can switch between:
+- **Gemini cloud** (`gemini-2.5-flash`)
+- **Ollama local** (`phi3`)
 
-To toggle between them, set `USE_LOCAL_LLM=true` in the `.env` file.
+Set this in environment config (for example `USE_LOCAL_LLM=true`).
+
+## Why this design
+The step-based pipeline keeps logic understandable and testable.
+It also lets you swap a single step later without rewriting the full flow.
+

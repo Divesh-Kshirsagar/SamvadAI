@@ -60,7 +60,7 @@ export default function ComplaintDetailPage() {
         <div className="lg:col-span-1 space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Customer Details</CardTitle>
+              <CardTitle className="text-lg font-semibold">Customer Details</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
@@ -80,7 +80,7 @@ export default function ComplaintDetailPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Original Complaint</CardTitle>
+              <CardTitle className="text-lg font-semibold">Original Complaint</CardTitle>
               <CardDescription>Raw text from the customer</CardDescription>
             </CardHeader>
             <CardContent>

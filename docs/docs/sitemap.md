@@ -1,9 +1,30 @@
-# Sitemap
+[Back to README](../../README.md)
 
-Use this directory to quickly navigate all SamvadAI documentation:
+# Documentation Sitemap
+**This page is a quick map of every documentation page in this project.**
 
-- **[Home](index.md)** - Project overview, features built, system architecture, and future updates.
-- **[Backend Architecture](backend.md)** - Data models, ER Diagrams, and Python frameworks.
-- **[Frontend Architecture](frontend.md)** - React features, Batch Algorithm, and Zustand state map.
-- **[AI Pipeline](ai-pipeline.md)** - LangGraph node logic, diagrams, and Dual-Model LLM strategy.
-- **[API Reference](api-reference.md)** - Detailed payload and schema structures used by the application.
+## Visual map
+
+```mermaid
+flowchart TD
+	A[README.md] --> B[index.md]
+	B --> C[backend.md]
+	B --> D[frontend.md]
+	B --> E[ai-pipeline.md]
+	B --> F[api-reference.md]
+	B --> G[sitemap.md]
+```
+
+## Start here
+- [Docs Home](index.md) — Project overview and architecture at a glance.
+
+## Architecture
+- [Backend Architecture](backend.md) — Backend components, models, and server behavior.
+- [Frontend Architecture](frontend.md) — UI modules and client-side data flow.
+- [AI Pipeline](ai-pipeline.md) — Pipeline steps and model strategy.
+
+## Integration
+- [API Reference](api-reference.md) — Endpoints and payload examples.
+
+## Repository entry point
+- [Main README](../../README.md) — Setup, quickstart, and full docs index.
