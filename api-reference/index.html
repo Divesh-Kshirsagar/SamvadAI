@@ -540,22 +540,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-endpoints" class="md-nav__link">
+  <a href="#endpoint-map" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Endpoints
+        Endpoint map
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Core Endpoints">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complaints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complaints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complaints">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-list-complaints" class="md-nav__link">
+  <a href="#get-apicomplaints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. List Complaints
+        GET /api/complaints/
       
     </span>
   </a>
@@ -563,10 +574,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-get-complaint-details" class="md-nav__link">
+  <a href="#get-apicomplaintscomplaint_id" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Get Complaint Details
+        GET /api/complaints/{complaint_id}/
       
     </span>
   </a>
@@ -574,10 +585,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-trigger-target-ai-analysis" class="md-nav__link">
+  <a href="#post-apicomplaintscomplaint_idanalyze" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Trigger Target AI Analysis
+        POST /api/complaints/{complaint_id}/analyze/
       
     </span>
   </a>
@@ -585,10 +596,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-trigger-batch-analysis" class="md-nav__link">
+  <a href="#post-apicomplaintsanalyze-all" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Trigger Batch Analysis
+        POST /api/complaints/analyze-all/
       
     </span>
   </a>
@@ -596,10 +607,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-update-status" class="md-nav__link">
+  <a href="#patch-apicomplaintscomplaint_idstatus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Update Status
+        PATCH /api/complaints/{complaint_id}/status/
       
     </span>
   </a>
@@ -612,22 +623,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#analytics-endpoints" class="md-nav__link">
+  <a href="#analytics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Analytics Endpoints
+        Analytics
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Analytics Endpoints">
+    <nav class="md-nav" aria-label="Analytics">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-dashboard-summary" class="md-nav__link">
+  <a href="#get-apianalyticssummary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Dashboard Summary
+        GET /api/analytics/summary/
       
     </span>
   </a>
@@ -635,10 +646,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-complaint-trends" class="md-nav__link">
+  <a href="#get-apianalyticstrends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Complaint Trends
+        GET /api/analytics/trends/
       
     </span>
   </a>
@@ -646,10 +657,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-duplicate-root-cause-clusters" class="md-nav__link">
+  <a href="#get-apianalyticsclusters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Duplicate Root Cause Clusters
+        GET /api/analytics/clusters/
       
     </span>
   </a>
@@ -658,6 +669,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-shape-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response shape notes
+      
+    </span>
+  </a>
   
 </li>
       
@@ -723,22 +745,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-endpoints" class="md-nav__link">
+  <a href="#endpoint-map" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Endpoints
+        Endpoint map
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Core Endpoints">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complaints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complaints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complaints">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-list-complaints" class="md-nav__link">
+  <a href="#get-apicomplaints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. List Complaints
+        GET /api/complaints/
       
     </span>
   </a>
@@ -746,10 +779,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-get-complaint-details" class="md-nav__link">
+  <a href="#get-apicomplaintscomplaint_id" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Get Complaint Details
+        GET /api/complaints/{complaint_id}/
       
     </span>
   </a>
@@ -757,10 +790,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-trigger-target-ai-analysis" class="md-nav__link">
+  <a href="#post-apicomplaintscomplaint_idanalyze" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Trigger Target AI Analysis
+        POST /api/complaints/{complaint_id}/analyze/
       
     </span>
   </a>
@@ -768,10 +801,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-trigger-batch-analysis" class="md-nav__link">
+  <a href="#post-apicomplaintsanalyze-all" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Trigger Batch Analysis
+        POST /api/complaints/analyze-all/
       
     </span>
   </a>
@@ -779,10 +812,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-update-status" class="md-nav__link">
+  <a href="#patch-apicomplaintscomplaint_idstatus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Update Status
+        PATCH /api/complaints/{complaint_id}/status/
       
     </span>
   </a>
@@ -795,22 +828,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#analytics-endpoints" class="md-nav__link">
+  <a href="#analytics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Analytics Endpoints
+        Analytics
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Analytics Endpoints">
+    <nav class="md-nav" aria-label="Analytics">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-dashboard-summary" class="md-nav__link">
+  <a href="#get-apianalyticssummary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Dashboard Summary
+        GET /api/analytics/summary/
       
     </span>
   </a>
@@ -818,10 +851,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-complaint-trends" class="md-nav__link">
+  <a href="#get-apianalyticstrends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Complaint Trends
+        GET /api/analytics/trends/
       
     </span>
   </a>
@@ -829,10 +862,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-duplicate-root-cause-clusters" class="md-nav__link">
+  <a href="#get-apianalyticsclusters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Duplicate Root Cause Clusters
+        GET /api/analytics/clusters/
       
     </span>
   </a>
@@ -841,6 +874,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-shape-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response shape notes
+      
+    </span>
+  </a>
   
 </li>
       
@@ -861,143 +905,77 @@
 
 
 
+<p><a href="../../README.md">Back to README</a></p>
 <h1 id="api-reference">API Reference</h1>
-<p>The SamvadAI backend exposes a RESTful interface using <strong>Django Ninja</strong> with strict <strong>Pydantic</strong> schema validation.</p>
-<p>All endpoints are prefixed with <code>/api/</code>. When running the server locally, you can view the interactive OpenAPI (Swagger) documentation at <code>http://localhost:8000/api/docs</code>.</p>
-<hr />
-<h2 id="core-endpoints">Core Endpoints</h2>
-<h3 id="1-list-complaints">1. List Complaints</h3>
-<ul>
-<li><strong>URL</strong>: <code>GET /api/complaints/</code></li>
-<li><strong>Query Parameters</strong>:</li>
-<li><code>priority</code> (optional string)</li>
-<li><code>status</code> (optional string)</li>
-<li><code>channel</code> (optional string)</li>
-<li><strong>Response</strong>: Array of <code>ComplaintOut</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;customer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rakesh Sharma&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-21T10:00:00Z&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Email&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&quot;account_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Savings&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&quot;raw_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My ATM card was swallowed...&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&quot;actual_priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;High&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Open&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">&quot;has_analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">]</span>
-</code></pre></div></li>
-</ul>
-<h3 id="2-get-complaint-details">2. Get Complaint Details</h3>
-<ul>
-<li><strong>URL</strong>: <code>GET /api/complaints/{id}/</code></li>
-<li><strong>Description</strong>: Retrieves detailed information for a specific complaint, including its attached AI Analysis metadata if it has been analyzed.</li>
-<li><strong>Response</strong>: <code>ComplaintDetailOut</code>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;uuid&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;customer_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rakesh Sharma&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-21T10:00:00Z&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Email&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">&quot;account_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Savings&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;raw_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My ATM card was swallowed...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;actual_priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;High&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Open&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">&quot;analysis&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Card&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="nt">&quot;product&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ATM&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">&quot;sentiment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Negative&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nt">&quot;ai_priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Urgent&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">&quot;sla_hours&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">&quot;sla_deadline&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-21T14:00:00Z&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">&quot;cluster_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ATM_SWALLOW&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nt">&quot;ai_draft&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dear Rakesh, we apologize...&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="nt">&quot;analyzed_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-22T10:00:00Z&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="nt">&quot;duplicate_of_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
-</code></pre></div></li>
-</ul>
-<h3 id="3-trigger-target-ai-analysis">3. Trigger Target AI Analysis</h3>
-<ul>
-<li><strong>URL</strong>: <code>POST /api/complaints/{id}/analyze/</code></li>
-<li><strong>Description</strong>: Invokes the <strong>LangGraph Agentic Pipeline</strong>. This takes the raw text, pushes it through the classification, sentiment, severity, duplicate detection, and draft response nodes.</li>
-<li><strong>Response</strong>: Extracted <code>AnalysisOut</code> JSON mapping directly to SQLite. Returns exactly the <code>analysis</code> object shown above.</li>
-</ul>
-<h3 id="4-trigger-batch-analysis">4. Trigger Batch Analysis</h3>
-<ul>
-<li><strong>URL</strong>: <code>POST /api/complaints/analyze-all/</code></li>
-<li><strong>Description</strong>: A convenience fallback for synchronous batch processing (Note: the frontend uses sequential batching to protect local Ollama limits, but this endpoint exists for robust server-side processing or CRON jobs).</li>
-<li><strong>Response</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;analyzed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
-</code></pre></div></li>
-</ul>
-<h3 id="5-update-status">5. Update Status</h3>
-<ul>
-<li><strong>URL</strong>: <code>PATCH /api/complaints/{id}/status/</code></li>
-<li><strong>Request Body</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Progress&quot;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
-</code></pre></div></li>
-<li><strong>Response</strong>: <code>{"status": "In Progress"}</code></li>
-</ul>
-<hr />
-<h2 id="analytics-endpoints">Analytics Endpoints</h2>
-<h3 id="1-dashboard-summary">1. Dashboard Summary</h3>
-<ul>
-<li><strong>URL</strong>: <code>GET /api/analytics/summary/</code></li>
-<li><strong>Response</strong>: <code>SummaryOut</code> (Used for generating Top-Level KPI Cards &amp; Pie Charts)
+<p><strong>This doc lists the main REST endpoints used by the frontend and shows simple request/response examples.</strong></p>
+<p>Base path: <code>/api</code>
+Swagger UI: <code>http://localhost:8000/api/docs</code></p>
+<h2 id="endpoint-map">Endpoint map</h2>
+<pre class="mermaid"><code>flowchart LR
+  A[Frontend] --&gt; B[GET complaints list]
+  A --&gt; C[GET complaint detail by id]
+  A --&gt; D[POST analyze complaint by id]
+  A --&gt; E[POST analyze all complaints]
+  A --&gt; F[PATCH complaint status by id]
+  A --&gt; G[GET analytics summary]
+  A --&gt; H[GET analytics trends]
+  A --&gt; I[GET analytics clusters]
+
+  D --&gt; J[(AnalysisResult)]
+  E --&gt; J
+  C --&gt; J
+  G --&gt; K[(Aggregations)]
+  H --&gt; K
+  I --&gt; K</code></pre>
+<h2 id="complaints">Complaints</h2>
+<h3 id="get-apicomplaints">GET <code>/api/complaints/</code></h3>
+<p>List complaints, with optional filters.</p>
+<p>Query params:
+- <code>priority</code>
+- <code>status</code>
+- <code>channel</code></p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span><span class="s2">&quot;http://localhost:8000/api/complaints/?status=Open&amp;priority=High&quot;</span>
+</code></pre></div></p>
+<h3 id="get-apicomplaintscomplaint_id">GET <code>/api/complaints/{complaint_id}/</code></h3>
+<p>Get one complaint with optional analysis payload.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span><span class="s2">&quot;http://localhost:8000/api/complaints/&lt;uuid&gt;/&quot;</span>
+</code></pre></div></p>
+<h3 id="post-apicomplaintscomplaint_idanalyze">POST <code>/api/complaints/{complaint_id}/analyze/</code></h3>
+<p>Run AI analysis for one complaint.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/api/complaints/&lt;uuid&gt;/analyze/&quot;</span>
+</code></pre></div></p>
+<h3 id="post-apicomplaintsanalyze-all">POST <code>/api/complaints/analyze-all/</code></h3>
+<p>Run analysis for all complaints.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:8000/api/complaints/analyze-all/&quot;</span>
+</code></pre></div></p>
+<h3 id="patch-apicomplaintscomplaint_idstatus">PATCH <code>/api/complaints/{complaint_id}/status/</code></h3>
+<p>Update complaint status.</p>
+<p>Body:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;urgent&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;high&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">&quot;medium&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">&quot;low&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">&quot;open_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">&quot;in_progress&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">&quot;resolved&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nt">&quot;by_category&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nt">&quot;Card&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="nt">&quot;Loan&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="nt">&quot;by_channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nt">&quot;Email&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="nt">&quot;Mobile App&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">  </span><span class="nt">&quot;by_priority&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="nt">&quot;Urgent&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="p">}</span>
-</code></pre></div></li>
-</ul>
-<h3 id="2-complaint-trends">2. Complaint Trends</h3>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Progress&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+</code></pre></div></p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>PATCH<span class="w"> </span><span class="s2">&quot;http://localhost:8000/api/complaints/&lt;uuid&gt;/status/&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;status&quot;:&quot;In Progress&quot;}&#39;</span>
+</code></pre></div></p>
+<h2 id="analytics">Analytics</h2>
+<h3 id="get-apianalyticssummary">GET <code>/api/analytics/summary/</code></h3>
+<p>Returns counts used by KPI cards and category/priority breakdown charts.</p>
+<h3 id="get-apianalyticstrends">GET <code>/api/analytics/trends/</code></h3>
+<p>Returns day-wise complaint counts.</p>
+<h3 id="get-apianalyticsclusters">GET <code>/api/analytics/clusters/</code></h3>
+<p>Returns duplicate cluster summaries and counts.</p>
+<h2 id="response-shape-notes">Response shape notes</h2>
 <ul>
-<li><strong>URL</strong>: <code>GET /api/analytics/trends/</code></li>
-<li><strong>Description</strong>: Provides a daily aggregation array of incoming complaint volumes.</li>
-<li><strong>Response</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">[</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-21&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">},</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-03-22&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">]</span>
-</code></pre></div></li>
-</ul>
-<h3 id="3-duplicate-root-cause-clusters">3. Duplicate Root Cause Clusters</h3>
-<ul>
-<li><strong>URL</strong>: <code>GET /api/analytics/clusters/</code></li>
-<li><strong>Description</strong>: Returns data for the Root Cause insights cards showing identical grouped problems mapped by the AI.</li>
-<li><strong>Response</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">[</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;cluster_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ATM_SWALLOW_INDORE&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;complaint_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;root_cause_summary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Simultaneous mechanism failure reported across 4 ATMs triggered by local power grid.&quot;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">]</span>
-</code></pre></div></li>
+<li>Complaint IDs are UUIDs.</li>
+<li>Analysis fields can be empty when not analyzed yet.</li>
+<li>Status values should follow the backend enum values.</li>
 </ul>
 
 

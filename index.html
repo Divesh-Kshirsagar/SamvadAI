@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#samvadai-documentation" class="md-skip">
+        <a href="#samvadai-docs-home" class="md-skip">
           Skip to content
         </a>
       
@@ -371,10 +371,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
+  <a href="#what-samvadai-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        System Architecture
+        What SamvadAI does
       
     </span>
   </a>
@@ -382,10 +382,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-overview" class="md-nav__link">
+  <a href="#system-view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project Overview
+        System view
       
     </span>
   </a>
@@ -393,10 +393,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-we-built" class="md-nav__link">
+  <a href="#core-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What We Built
+        Core workflow
       
     </span>
   </a>
@@ -404,10 +404,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#future-roadmap" class="md-nav__link">
+  <a href="#where-to-go-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Future Roadmap
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#honest-project-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Honest project note
       
     </span>
   </a>
@@ -643,10 +654,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#system-architecture" class="md-nav__link">
+  <a href="#what-samvadai-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        System Architecture
+        What SamvadAI does
       
     </span>
   </a>
@@ -654,10 +665,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-overview" class="md-nav__link">
+  <a href="#system-view" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project Overview
+        System view
       
     </span>
   </a>
@@ -665,10 +676,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-we-built" class="md-nav__link">
+  <a href="#core-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What We Built
+        Core workflow
       
     </span>
   </a>
@@ -676,10 +687,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#future-roadmap" class="md-nav__link">
+  <a href="#where-to-go-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Future Roadmap
+        Where to go next
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#honest-project-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Honest project note
       
     </span>
   </a>
@@ -703,37 +725,38 @@
 
 
 
-<h1 id="samvadai-documentation">SamvadAI Documentation</h1>
-<p>Welcome to the internal documentation for SamvadAI, the advanced Gen-AI powered complaint resolution and analytics platform for Union Bank.</p>
-<h2 id="system-architecture">System Architecture</h2>
+<p><a href="../../README.md">Back to README</a></p>
+<h1 id="samvadai-docs-home">SamvadAI Docs Home</h1>
+<p><strong>This page gives you the quickest way to understand what SamvadAI is and how the parts fit together.</strong></p>
+<h2 id="what-samvadai-does">What SamvadAI does</h2>
+<p>SamvadAI helps complaint teams process bank complaints faster.
+For each complaint, it classifies category, detects sentiment, estimates priority/SLA, checks duplicate patterns, and drafts a response for agent review.</p>
+<h2 id="system-view">System view</h2>
 <pre class="mermaid"><code>graph TD
-    User((Bank Agent)) --&gt; Web[React Frontend Dashboard]
-    Web -- API Requests --&gt; API[Django Ninja Backend]
-    subgraph AI Cloud
-        API -- google-genai --&gt; Gemini[Gemini 2.5 Flash]
-    end
-    subgraph Local Edge
-        API -- langchain-ollama --&gt; Phi3[Phi-3 Local Model]
-    end
-    API -- ORM --&gt; SQLite[(SQLite DB)]
-    Web -- Real-time Sync --&gt; Zustand[Zustand State Store]</code></pre>
-<h2 id="project-overview">Project Overview</h2>
-<p>This repository contains the complete source code for:
-- <strong><code>apps/api</code></strong>: Django 5 + Ninja + LangGraph API backend.
-- <strong><code>apps/web</code></strong>: Vite + React 19 + shadcn/ui frontend dashboard.
-- <strong><code>shared</code></strong>: Cross-platform TypeScript logic and React primitives.
-- <strong><code>scripts</code></strong>: Automation bash scripts for rapid setup.</p>
-<h2 id="what-we-built">What We Built</h2>
-<p>SamvadAI was built to prove that enterprise banking can leverage cutting-edge Gen-AI securely.
-1. <strong>Agentic Pipeline</strong>: We didn't just build a wrapper; we built a deterministic <strong>5-node LangGraph</strong> state machine. Each complaint is routed through distinct AI logic steps (Classify -&gt; Sentiment -&gt; SLA -&gt; Duplicate Detect -&gt; Draft).
-2. <strong>On-Device Edge AI</strong>: We integrated <strong>Phi-3 via Ollama</strong>, proving that the bank does not have to send sensitive customer financial data to external cloud providers. The entire app can run fully air-gapped using local hardware.
-3. <strong>Optimized Frontend Batching</strong>: To protect the local Ollama LLM from being overwhelmed by concurrent requests, we built a React-based <strong>Zustand loop</strong> that chunks batch requests sequentially, updating a live progress bar.</p>
-<h2 id="future-roadmap">Future Roadmap</h2>
-<p>While the hackathon demo is complete, the architecture is designed to scale with these future additions:
-1. <strong>React Native Mobile App</strong>: Using the <code>shared/</code> package, agents and branch managers can have a native mobile experience to approve complaint drafts on the go.
-2. <strong>WebSocket Live Analysis</strong>: Connecting Django Channels to the React dashboard to stream AI analysis progress token-by-token directly into the UI.
-3. <strong>Advanced RAG integration</strong>: Currently, drafts are based on general tone. We plan to insert a vector database (like Qdrant or ChromaDB) loaded with Union Bank's exact policy PDFs, ensuring the AI cites actual bank clauses when drafting refunds.
-4. <strong>Automated Sending</strong>: Connecting the "Approve &amp; Send" button directly to the bank's SMTP server / WhatsApp Business API to execute the resolution immediately.</p>
+    U[Bank Agent] --&gt; W[Web App (React)]
+    W --&gt; A[API (Django-Ninja)]
+    A --&gt; DB[(SQLite)]
+    A --&gt; P[LangGraph Pipeline]
+    P --&gt; G[Gemini Cloud Model]
+    P --&gt; O[Ollama Local Model]</code></pre>
+<h2 id="core-workflow">Core workflow</h2>
+<ol>
+<li>Complaint arrives from any channel.</li>
+<li>Backend stores it as a complaint record.</li>
+<li>AI pipeline runs analysis steps.</li>
+<li>UI shows analysis + draft.</li>
+<li>Agent reviews and updates status.</li>
+</ol>
+<h2 id="where-to-go-next">Where to go next</h2>
+<ul>
+<li><a href="backend/">Backend Architecture</a></li>
+<li><a href="frontend/">Frontend Architecture</a></li>
+<li><a href="ai-pipeline/">AI Pipeline</a></li>
+<li><a href="api-reference/">API Reference</a></li>
+<li><a href="sitemap/">Sitemap</a></li>
+</ul>
+<h2 id="honest-project-note">Honest project note</h2>
+<p>The local demo works well. This project still needs production hardening, stronger async processing, and broader automated tests.</p>
 
 
 

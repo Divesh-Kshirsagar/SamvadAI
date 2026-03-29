@@ -455,10 +455,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#data-models-er-diagram" class="md-nav__link">
+  <a href="#stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Models &amp; ER Diagram
+        Stack
       
     </span>
   </a>
@@ -466,10 +466,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-endpoints" class="md-nav__link">
+  <a href="#main-backend-folders" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API Endpoints
+        Main backend folders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model-high-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model (high level)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API routing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-run-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local run commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limitations
       
     </span>
   </a>
@@ -628,10 +672,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#data-models-er-diagram" class="md-nav__link">
+  <a href="#stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Models &amp; ER Diagram
+        Stack
       
     </span>
   </a>
@@ -639,10 +683,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#api-endpoints" class="md-nav__link">
+  <a href="#main-backend-folders" class="md-nav__link">
     <span class="md-ellipsis">
       
-        API Endpoints
+        Main backend folders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model-high-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data model (high level)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API routing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-run-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local run commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known limitations
       
     </span>
   </a>
@@ -666,49 +754,67 @@
 
 
 
+<p><a href="../../README.md">Back to README</a></p>
 <h1 id="backend-architecture">Backend Architecture</h1>
-<p>The SamvadAI backend is built strictly for high performance and rapid development using the following stack:</p>
+<p><strong>This doc explains how the Django backend stores complaints, exposes APIs, and runs AI analysis.</strong></p>
+<h2 id="stack">Stack</h2>
 <ul>
-<li><strong>Django 5</strong>: Core framework and ORM (SQLite).</li>
-<li><strong>Django-Ninja</strong>: Fast API routing with Pydantic schema validation.</li>
-<li><strong>LangChain &amp; LangGraph</strong>: Agentic AI orchestration for processing complaint pipelines.</li>
+<li>Django</li>
+<li>Django-Ninja (REST API + schema validation)</li>
+<li>SQLite (local demo DB)</li>
+<li>LangGraph pipeline integration</li>
 </ul>
-<h2 id="data-models-er-diagram">Data Models &amp; ER Diagram</h2>
-<p>The SQLite schema is optimized for lookup speed and historical traceability.</p>
+<h2 id="main-backend-folders">Main backend folders</h2>
+<ul>
+<li><code>apps/api/api/</code> — Django project config (<code>settings.py</code>, <code>urls.py</code>).</li>
+<li><code>apps/api/complaints/</code> — models, schemas, API routes, pipeline logic.</li>
+<li><code>apps/api/complaints/management/commands/</code> — seed scripts.</li>
+</ul>
+<h2 id="data-model-high-level">Data model (high level)</h2>
 <pre class="mermaid"><code>erDiagram
-    COMPLAINT ||--o| ANALYSIS_RESULT : "has analysis"
-    COMPLAINT ||--o{ COMPLAINT : "duplicate of"
-    ANALYSIS_RESULT }|--o| DUPLICATE_GROUP : "belongs to cluster"
-
+    COMPLAINT ||--o| ANALYSIS_RESULT : has_one
     COMPLAINT {
-        UUID id PK
-        string customer_name
-        datetime timestamp
-        string channel
-        string account_type
-        string raw_text
-        string actual_priority
-        string status
+      UUID id
+      string customer_name
+      datetime timestamp
+      string channel
+      string account_type
+      text raw_text
+      string actual_priority
+      string status
     }
-
     ANALYSIS_RESULT {
-        int id PK
-        string category
-        string product
-        string sentiment
-        string ai_priority
-        int sla_hours
-        datetime sla_deadline
-        text ai_draft
-        datetime analyzed_at
-    }
-
-    DUPLICATE_GROUP {
-        string cluster_tag PK
-        text root_cause_summary
+      int id
+      string category
+      string product
+      string sentiment
+      string ai_priority
+      int sla_hours
+      datetime sla_deadline
+      string cluster_tag
+      text ai_draft
+      datetime analyzed_at
     }</code></pre>
-<h2 id="api-endpoints">API Endpoints</h2>
-<p>All endpoints are mounted under <code>/api/</code>. For an interactive swagger interface, start the server and visit <code>/api/docs/</code>.</p>
+<h2 id="api-routing">API routing</h2>
+<p>All API endpoints are mounted under <code>/api/</code> using Django-Ninja.</p>
+<ul>
+<li>Complaint routes: listing, detail, analyze single, analyze all, status update.</li>
+<li>Analytics routes: summary, trends, clusters.</li>
+</ul>
+<p>See full endpoint details in <a href="../api-reference/">API Reference</a>.</p>
+<h2 id="local-run-commands">Local run commands</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>apps/api
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>uv<span class="w"> </span>sync
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>seed_complaints
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>uv<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver<span class="w"> </span><span class="m">0</span>.0.0.0:8000
+</code></pre></div>
+<h2 id="known-limitations">Known limitations</h2>
+<ul>
+<li>Bulk analysis is currently synchronous in the API path.</li>
+<li>Production security settings need stricter environment setup.</li>
+<li>More tests are needed around pipeline edge cases.</li>
+</ul>
 
 
 

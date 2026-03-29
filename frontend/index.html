@@ -483,10 +483,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tech-stack" class="md-nav__link">
+  <a href="#stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tech Stack
+        Stack
       
     </span>
   </a>
@@ -494,10 +494,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#feature-modules" class="md-nav__link">
+  <a href="#feature-areas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Feature Modules
+        Feature areas
       
     </span>
   </a>
@@ -505,10 +505,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#batch-processing-algorithm" class="md-nav__link">
+  <a href="#frontend-module-map" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Batch Processing Algorithm
+        Frontend module map
       
     </span>
   </a>
@@ -516,10 +516,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-management" class="md-nav__link">
+  <a href="#data-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        State Management
+        Data flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-level-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Page-level behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-run-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local run commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-improvements-to-consider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical improvements to consider
       
     </span>
   </a>
@@ -650,10 +683,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tech-stack" class="md-nav__link">
+  <a href="#stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tech Stack
+        Stack
       
     </span>
   </a>
@@ -661,10 +694,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#feature-modules" class="md-nav__link">
+  <a href="#feature-areas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Feature Modules
+        Feature areas
       
     </span>
   </a>
@@ -672,10 +705,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#batch-processing-algorithm" class="md-nav__link">
+  <a href="#frontend-module-map" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Batch Processing Algorithm
+        Frontend module map
       
     </span>
   </a>
@@ -683,10 +716,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-management" class="md-nav__link">
+  <a href="#data-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        State Management
+        Data flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-level-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Page-level behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-run-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local run commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-improvements-to-consider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical improvements to consider
       
     </span>
   </a>
@@ -710,42 +776,68 @@
 
 
 
+<p><a href="../../README.md">Back to README</a></p>
 <h1 id="frontend-architecture">Frontend Architecture</h1>
-<p>The SamvadAI web platform is a modern Single Page Application (SPA).</p>
-<h2 id="tech-stack">Tech Stack</h2>
+<p><strong>This doc explains how the React app is structured and how data flows from API to UI.</strong></p>
+<h2 id="stack">Stack</h2>
 <ul>
-<li><strong>Framework</strong>: React 19 + Vite</li>
-<li><strong>Routing</strong>: React Router DOM v7</li>
-<li><strong>Data Fetching</strong>: TanStack Query (React Query) v5</li>
-<li><strong>Styling</strong>: Tailwind CSS v4 + shadcn/ui</li>
-<li><strong>Charts</strong>: Recharts</li>
+<li>React + Vite + TypeScript</li>
+<li>shadcn/ui + Tailwind CSS</li>
+<li>TanStack Query (server state)</li>
+<li>Zustand (client/workflow state)</li>
+<li>Recharts (analytics visualizations)</li>
 </ul>
-<h2 id="feature-modules">Feature Modules</h2>
-<p>The frontend is divided into independent feature modules located in <code>apps/web/src/features/</code>:</p>
+<h2 id="feature-areas">Feature areas</h2>
+<ul>
+<li><strong>Dashboard</strong>: KPI cards + snapshot charts.</li>
+<li><strong>Complaints</strong>: table with filtering.</li>
+<li><strong>Complaint Detail</strong>: full complaint context + AI analysis + draft editor.</li>
+<li><strong>Analytics</strong>: trend and clustering views.</li>
+</ul>
+<h2 id="frontend-module-map">Frontend module map</h2>
+<pre class="mermaid"><code>flowchart TD
+    A[App Layout + Router] --&gt; B[Dashboard]
+    A --&gt; C[Complaints List]
+    A --&gt; D[Complaint Detail]
+    A --&gt; E[Analytics]
+
+    C --&gt; F[Filters + Table]
+    D --&gt; G[AI Analysis Panel]
+    D --&gt; H[Draft Response Editor]
+    E --&gt; I[Trend Charts]
+
+    F --&gt; J[API Hooks]
+    G --&gt; J
+    H --&gt; J
+    I --&gt; J
+    J --&gt; K[TanStack Query Cache]
+    J --&gt; L[Backend API]</code></pre>
+<h2 id="data-flow">Data flow</h2>
 <ol>
-<li><strong>Dashboard</strong>: High level KPI cards and simple graphs.</li>
-<li><strong>Complaints List</strong>: Searchable and filterable data table of all registry complaints.</li>
-<li><strong>Complaint Detail</strong>: The single view for a complaint, containing the AI Analysis intelligence panel and Draft Response Editor.</li>
-<li><strong>Analytics</strong>: Macro-level complaint trends over time and duplicate root-cause clustering.</li>
+<li>Page loads.</li>
+<li>Hook calls API through shared <code>fetcher</code>.</li>
+<li>Query cache stores response.</li>
+<li>Components render table/cards/charts.</li>
+<li>User actions trigger mutation endpoints and invalidate stale queries.</li>
 </ol>
-<h2 id="batch-processing-algorithm">Batch Processing Algorithm</h2>
-<p>To protect the local <strong>Phi-3</strong> execution environment (Ollama), the "Analyze All" feature uses a <strong>Sequential Chunking Loop</strong> rather than parallel requests.</p>
-<p><strong>Algorithm Pseudo-code</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">function</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="nx">analyzeAll</span><span class="p">(</span><span class="nx">complaints</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">pending</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">complaints</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">c</span><span class="p">.</span><span class="nx">has_analysis</span><span class="p">);</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">pending</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="sb">`/analyze/</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nx">updateZustandProgress</span><span class="p">();</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nx">queryClient</span><span class="p">.</span><span class="nx">invalidateQueries</span><span class="p">();</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">      </span><span class="nx">handleError</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
-</code></pre></div></p>
-<h2 id="state-management">State Management</h2>
-<p>Global state (including the batch-processor progress and analysis status) is managed using <strong>Zustand</strong>, allowing the AI pipeline to continue processing in the <strong>background</strong> even if the user switches between feature tabs or navigates away from the registry.</p>
+<h2 id="page-level-behavior">Page-level behavior</h2>
+<ul>
+<li>Complaints list supports filter-based fetch.</li>
+<li>Detail page retrieves complaint + analysis data.</li>
+<li>Analyze actions call backend and refresh local state.</li>
+<li>Analytics page reads summary/trend/cluster endpoints.</li>
+</ul>
+<h2 id="local-run-commands">Local run commands</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>apps/web
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>npm<span class="w"> </span>install
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<h2 id="practical-improvements-to-consider">Practical improvements to consider</h2>
+<ul>
+<li>Better loading skeletons and empty states.</li>
+<li>Consistent status/priority color mapping across all pages.</li>
+<li>User-friendly retry UI for failed API calls.</li>
+</ul>
 
 
 

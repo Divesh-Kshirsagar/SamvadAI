@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gen-ai-pipeline" class="md-skip">
+        <a href="#ai-pipeline" class="md-skip">
           Skip to content
         </a>
       
@@ -513,10 +513,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#langgraph-logic" class="md-nav__link">
+  <a href="#pipeline-graph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LangGraph Logic
+        Pipeline graph
       
     </span>
   </a>
@@ -524,22 +524,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#node-algorithms" class="md-nav__link">
+  <a href="#step-by-step-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Node Algorithms
+        Step-by-step behavior
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Node Algorithms">
+    <nav class="md-nav" aria-label="Step-by-step behavior">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-classifier-node" class="md-nav__link">
+  <a href="#1-classify" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Classifier Node
+        1) Classify
       
     </span>
   </a>
@@ -547,10 +547,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-sentiment-node" class="md-nav__link">
+  <a href="#2-sentiment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Sentiment Node
+        2) Sentiment
       
     </span>
   </a>
@@ -558,10 +558,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-severity-sla-node" class="md-nav__link">
+  <a href="#3-priority-sla" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Severity &amp; SLA Node
+        3) Priority + SLA
       
     </span>
   </a>
@@ -569,10 +569,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-duplicate-detection-node" class="md-nav__link">
+  <a href="#4-duplicatecluster-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Duplicate Detection Node
+        4) Duplicate/cluster detection
       
     </span>
   </a>
@@ -580,10 +580,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-draft-response-node" class="md-nav__link">
+  <a href="#5-draft-response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Draft Response Node
+        5) Draft response
       
     </span>
   </a>
@@ -596,10 +596,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#llm-providers" class="md-nav__link">
+  <a href="#model-providers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LLM Providers
+        Model providers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this design
       
     </span>
   </a>
@@ -695,10 +706,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#langgraph-logic" class="md-nav__link">
+  <a href="#pipeline-graph" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LangGraph Logic
+        Pipeline graph
       
     </span>
   </a>
@@ -706,22 +717,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#node-algorithms" class="md-nav__link">
+  <a href="#step-by-step-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Node Algorithms
+        Step-by-step behavior
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Node Algorithms">
+    <nav class="md-nav" aria-label="Step-by-step behavior">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-classifier-node" class="md-nav__link">
+  <a href="#1-classify" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Classifier Node
+        1) Classify
       
     </span>
   </a>
@@ -729,10 +740,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-sentiment-node" class="md-nav__link">
+  <a href="#2-sentiment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Sentiment Node
+        2) Sentiment
       
     </span>
   </a>
@@ -740,10 +751,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-severity-sla-node" class="md-nav__link">
+  <a href="#3-priority-sla" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Severity &amp; SLA Node
+        3) Priority + SLA
       
     </span>
   </a>
@@ -751,10 +762,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-duplicate-detection-node" class="md-nav__link">
+  <a href="#4-duplicatecluster-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Duplicate Detection Node
+        4) Duplicate/cluster detection
       
     </span>
   </a>
@@ -762,10 +773,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-draft-response-node" class="md-nav__link">
+  <a href="#5-draft-response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Draft Response Node
+        5) Draft response
       
     </span>
   </a>
@@ -778,10 +789,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#llm-providers" class="md-nav__link">
+  <a href="#model-providers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LLM Providers
+        Model providers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this design
       
     </span>
   </a>
@@ -805,45 +827,35 @@
 
 
 
-<h1 id="gen-ai-pipeline">Gen-AI Pipeline</h1>
-<p>SamvadAI uses a complex <code>LangGraph</code> state machine to guarantee deterministic and highly accurate data processing.</p>
-<p>The graph executes sequentially for every incoming complaint.</p>
-<h2 id="langgraph-logic">LangGraph Logic</h2>
-<p>The SamvadAI pipeline is a deterministic state machine orchestrated by <code>LangGraph</code>. This ensures that even for complex, non-linear reasoning, the processing flow is structured and testable.</p>
-<pre class="mermaid"><code>graph LR
-    Start([Input: Raw Text]) --&gt; Classify[Classifier]
-    Classify --&gt; Sentiment[Sentiment Analysis]
-    Sentiment --&gt; Severity[Severity &amp; SLA]
-    Severity --&gt; Duplicate[Duplicate Detection]
-    Duplicate --&gt; Draft[Response Draft]
-    Draft --&gt; End([Output: AnalysisResult])</code></pre>
-<h2 id="node-algorithms">Node Algorithms</h2>
-<h3 id="1-classifier-node">1. Classifier Node</h3>
-<p><strong>Algorithm</strong>: Zero-shot Classification + Pydantic Parsing.
-- Takes <code>raw_text</code>.
-- Predicts <code>category</code> (Loan/Card/Digital/Branch/Fraud) and <code>product</code> (e.g. IMPS, KYC, ATM).
-- Returns structured JSON to the graph state.</p>
-<h3 id="2-sentiment-node">2. Sentiment Node</h3>
-<p><strong>Algorithm</strong>: Emotional Tone Mapping.
-- Extracts <code>tone</code> (Positive/Neutral/Negative/Hostile).
-- Hostile sentiment triggers an automatic escalation flag for management.</p>
-<h3 id="3-severity-sla-node">3. Severity &amp; SLA Node</h3>
-<p><strong>Algorithm</strong>: Priority Scoring Matrix.
-- Inputs <code>category</code> and <code>sentiment</code>.
-- Urgent category + Negative sentiment = <strong>Urgent</strong> priority.
-- Generates a <strong>deadline timestamp</strong> based on <code>sla_hours</code> (e.g., 4h for Urgent, 24h for Low).</p>
-<h3 id="4-duplicate-detection-node">4. Duplicate Detection Node</h3>
-<p><strong>Algorithm</strong>: Vector-like semantic clustering (via few-shot LLM matching).
-- Compares new complaint against <code>existing_clusters</code> fetched from SQLite.
-- If a match is found, it labels the <code>cluster_tag</code> to group systemic bank outages (e.g., "ATM_DOWN_INDORE").</p>
-<h3 id="5-draft-response-node">5. Draft Response Node</h3>
-<p><strong>Algorithm</strong>: Contextual Templating.
-- Combines the complaint text and AI insights to draft a professional, helpful support reply in the bank's brand voice.</p>
-<h2 id="llm-providers">LLM Providers</h2>
-<p>SamvadAI is built with a dual-model fallback architecture:
-1. <strong>Cloud (Default)</strong>: Uses Google Gemini 2.5 Flash via <code>langchain-google-genai</code>. This is the primary stable model for the cloud-connected dashboard.
-2. <strong>Local (Edge)</strong>: Uses Microsoft Phi-3 via <code>Ollama</code>. This allows the bank's sensitive customer data to be processed entirely offline on internal infrastructure.</p>
-<p>To toggle between them, set <code>USE_LOCAL_LLM=true</code> in the <code>.env</code> file.</p>
+<p><a href="../../README.md">Back to README</a></p>
+<h1 id="ai-pipeline">AI Pipeline</h1>
+<p><strong>This doc explains each step in the LangGraph pipeline from complaint text to drafted response.</strong></p>
+<h2 id="pipeline-graph">Pipeline graph</h2>
+<pre class="mermaid"><code>flowchart LR
+    A[Raw complaint] --&gt; B[Classify]
+    B --&gt; C[Sentiment]
+    C --&gt; D[Priority + SLA]
+    D --&gt; E[Duplicate cluster]
+    E --&gt; F[Draft response]</code></pre>
+<h2 id="step-by-step-behavior">Step-by-step behavior</h2>
+<h3 id="1-classify">1) Classify</h3>
+<p>The model predicts complaint category and product area.</p>
+<h3 id="2-sentiment">2) Sentiment</h3>
+<p>The model labels complaint tone (for example: neutral, negative, hostile).</p>
+<h3 id="3-priority-sla">3) Priority + SLA</h3>
+<p>The model estimates urgency and suggested SLA window.</p>
+<h3 id="4-duplicatecluster-detection">4) Duplicate/cluster detection</h3>
+<p>The pipeline checks if this complaint resembles existing issue clusters.</p>
+<h3 id="5-draft-response">5) Draft response</h3>
+<p>The model drafts a response text for human review.</p>
+<h2 id="model-providers">Model providers</h2>
+<p>You can switch between:
+- <strong>Gemini cloud</strong> (<code>gemini-2.5-flash</code>)
+- <strong>Ollama local</strong> (<code>phi3</code>)</p>
+<p>Set this in environment config (for example <code>USE_LOCAL_LLM=true</code>).</p>
+<h2 id="why-this-design">Why this design</h2>
+<p>The step-based pipeline keeps logic understandable and testable.
+It also lets you swap a single step later without rewriting the full flow.</p>
 
 
 
