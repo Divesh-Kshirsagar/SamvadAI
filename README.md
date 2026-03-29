@@ -45,6 +45,16 @@ SamvadAI/
 | UI + State | shadcn/ui, Tailwind, TanStack Query, Zustand, Recharts |
 | Docs | MkDocs (Material theme) |
 
+## Screenshots
+
+### Dashboard
+
+![SamvadAI Dashboard](screenshots/dashboard.png)
+
+### Complaint Detail
+
+![SamvadAI Complaint Detail](screenshots/complaint.png)
+
 ## Quickstart (local, 4 commands)
 
 1) Backend setup + run:
