@@ -40,7 +40,7 @@ SamvadAI/
 | Backend API | Django, Django-Ninja |
 | Database | SQLite |
 | AI orchestration | LangGraph, LangChain |
-| AI models | Gemini (`gemini-2.5-flash`), Ollama (`phi3`) |
+| AI models | Gemini (`gemini-2.5-flash`), Ollama (`phi3`), Claude (`calude-haiku-4.5`) |
 | Frontend | React, Vite, TypeScript |
 | UI + State | shadcn/ui, Tailwind, TanStack Query, Zustand, Recharts |
 | Docs | MkDocs (Material theme) |
